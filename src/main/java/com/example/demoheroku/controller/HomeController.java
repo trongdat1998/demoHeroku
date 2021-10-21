@@ -12,13 +12,8 @@ import java.util.List;
 
 @Controller
 public class HomeController {
-    @Autowired
-    AccountDao accountDao;
-    @ResponseBody
-    @RequestMapping("/demoheroku")
-    public String heroku(Model model){
-        List<Account> ac = accountDao.findAll();
-        System.out.println(ac.get(0).getUsername());
-        return "demo";
+    @RequestMapping("/home")
+    public String heroku(){
+        return "index.html";
     }
 }
